@@ -1,0 +1,13 @@
+//==============================================
+// Name:           Ali Riza Sevgili
+// Student Number: 135200228
+// Email:          arsevgili@myseneca.ca
+// Section:        NCC
+// Date:           Jan 28,2024
+// Workshop:       Workshop2
+// I have completed all the coding by myself and
+// copied only the code provided by the professor to submit my assignment.
+//==============================================
+
+I had the chance to use the "fstream" file input and output library in this workshop, and I was able to fully grasp its concept from the previous semester. I saved the value to a string type variable by reading the file line by line using the "getline" function. This time in particular, I read the same file twice using the "seekg" function. The reason for this is that the file position indicator would have reached the end of the file if the file had been read in order to count all of the lines in it. To read the same file again, I had to move the file position indicator to the beginning for this reason. Furthermore, I timed the implementation of my function using the recently acquired "chrono" library.This workshop's implementation of move semantics was its most intriguing feature. Contrary to what its name suggests, a "move()" function does not actually move a value. Its sole purpose is to alter the rvalue. Next, the move constructor I implemented moves the value that was changed to rvalue. The move constructor can be implemented by using "&&" as a reference. Significantly faster than copy semantics is move semantics, which takes rvalue as a reference. This is so that each and every piece of data is deep copied while preserving the original data using the copy constructor. The address value of the original data is given to the move constructor, though. Because it doesn't reallocate memory, the moving constructor is consequently faster than the copy constructor.
+

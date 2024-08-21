@@ -1,0 +1,19 @@
+/*
+    ==================================================
+    Workshop #1 (reflect):
+    ==================================================
+    Name   : Ali Riza Sevgili
+    ID     : 135200229
+    Email  : arsevgili@myseneca.ca
+    Section: NCC
+*/
+
+
+When we wish to use a global variable defined at another translation unit, we can use external linkage.
+For instance, the code line that defines the global variable g_sysClock in my program's event.cpp is unsigned int g_sysClock = 0.
+Additionally, this code declares externally in w1_p2.cpp that the global variable will be used in this translation unit (extern unsigned int g_sysClock).
+When a variable is to function as a global variable but be inaccessible to other translation units, it is said to be internally linked.
+For instance, in the member function display() of event.cpp, I defined static int counter = 0;. For the duration of the programme, it stays in memory, but only the event.cpp translator unit can access it. Consequently, each time display() is called, the counter is increased, allowing us to keep track of how many times display() has been called.
+Utilising the rule of three, I upgraded my Event class. I had to use DMA since any length of description cstring should be accepted. 
+
+

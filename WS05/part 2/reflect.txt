@@ -1,0 +1,24 @@
+//==============================================
+// Name:           Ali Riza Sevgili
+// Student Number: 135200228
+// Email:          arsevgili@myseneca.ca
+// Section:        NCC
+// Date:           Feb 4,2024
+// Workshop:       Workshop-5
+// I have completed all the coding by myself and
+// copied only the code provided by the professor to submit my assignment.
+//==============================================
+
+
+This workshop provided an in-depth overview of the last part of advanced C++ functors, lambda expressions, and exception handling, together with the design patterns for controlling duplication of the code. Hence, understanding this involved obtaining the insight into C++ syntax, the best practices, and learning when to prefer functors versus lambda expressions.
+Functors are objects that can be called just as if they were a function or function pointer. They are instances of classes that have the operator() defined. Lambdas, on the other hand, are more compact ways of dealing with anonymous functions. They are useful for short snippets of code that can be defined inline. The choice between a functor and a lambda expression is based on the complexity of the operation and the need to use it more than one time. Functors are more suitable for repeated simple tasks because they can be passed around and stored just like objects. While lambda expressions fit in one-off, simple tasks, those that can be defined at the point of their use.
+
+The SpellChecker Constructor and Exception Handling:
+The constructor of SpellChecker throws an exception in some conditions, which could be troubling. The stronger way can be to return a status code or use a factory function that validates the data before object creation—hence no exceptions can be thrown while constructing the object. This results in the better manageability of control flow as error handling is made more explicit and the overhead of the exception mechanism is avoided. The exception-based approach gives a clearer signal on error conditions, but the cost may be potential performance penalties and needing try-catch blocks. The alternative approach needs more disciplined error checking but improves performance as well as readability.
+
+Removing Logic Duplication in the Movie and Book Classes:
+A large logic duplication occurs in the Movie and Book classes and this is in loading data from a file. To solve that, I would use inheritance or composition to abstract common logic into a separate class or function. For example, having a BaseMedia class that encapsulates shared logic and Movie and Book extend from BaseMedia will reduce the duplication of logic. A variant is a utility function to be used by both classes for file loading. This makes following not only the principle of DRY (Don't Repeat Yourself) but also making maintenance quite simple with refactoring.
+
+Default Constructors are Needed:
+The both Movie and Book classes have a custom constructor and a default constructor. A default constructor was not provided here because for these classes, the objects were always supposed to be created with certain data already in them. Without the default constructor, it can be ensured that in case this is not the objective, every object is well initialized. However, it should be left in those cases when there needs to exist a scenarios of an empty object, or in a context of its usage which demands for a default initializable objects - like in containers. Whether to remove or keep the default constructor is an application-specific decision and in most cases the added flexibility would not warrant this side effect of uninitialized objects.
+This workshop has exposed me to the know-how on syntax, as well as design patterns, which make my C++ code more effective and readable and maintainable. So, picking between functors and lambda expressions, using constructors in moderation, and dealing properly with exceptions are challenges to get a robust solution.

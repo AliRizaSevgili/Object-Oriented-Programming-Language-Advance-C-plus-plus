@@ -1,0 +1,38 @@
+//==============================================
+// Name:           Ali Riza Sevgili
+// Student Number: 135200228
+// Email:          arsevgili@myseneca.ca
+// Section:        NCC
+// Date:           Feb 4,2024
+// Workshop:       Workshop-6
+// I have completed all the coding by myself and
+// copied only the code provided by the professor to submit my assignment.
+//==============================================
+
+
+1-Why do you need to deallocate the dynamically allocated memory in your vector?
+
+
+Allocating memory dynamically in C++ with the new keyword means the memory stays allocated until you explicitly free it using delete. If you don't release this memory when it's no longer needed, it results in a memory leak. This is memory that the program doesn't use anymore but hasn't returned to the system, which can eventually lead to performance issues or memory exhaustion, especially in programs that run for a long time or use a lot of resources.
+
+In the context of a std::vector holding pointers to dynamically allocated objects, not deallocating these objects before the vector goes out of scope means the allocated memory stays occupied until the program ends. This is why in the destructor of the College class (~College()), there's a loop that goes through the std::vector<Person*> and deletes each Person object. The delete (*i); statement is vital because it frees up the memory allocated for each Person object. If you skip this step, the memory allocated for Person objects when they were added to the vector would never be released, leading to memory leaks.
+
+
+2-Handling input file errors in loadData():
+
+    When loadData() processes an input file, it might run into errors, like unrecognized person types or incorrect data formats. Using exception handling lets the function signal when it hits an unexpected or wrong record. If an error occurs, loadData() can throw an exception, which the calling function can catch to take suitable actions, such as logging the error, ignoring the faulty record, or stopping the process altogether.
+
+Alternatively, loadData() could use return codes or status flags to communicate success or the nature of any encountered errors. This method allows the calling function to assess the return value and decide on the appropriate next steps based on the specific error encountered. Additionally, having a strong validation system within loadData() can help identify and address data inconsistencies and inaccuracies before trying to create any objects, thus sidestepping certain error types.
+
+For example, in the Employee constructor, there's a segment where data is read and validated from an input stream. If the data turns out to be invalid (like if 'age' isn't a digit), the constructor throws an exception. This approach could be integrated into loadData(), where if the incoming data doesn't match the expected criteria (e.g., age isn't numeric), an exception is thrown. loadData() could then catch these exceptions, pinpoint the error based on the exception's message or type, and determine how to proceed, whether by logging the error, skipping the record, etc.
+
+Using return values is an alternate strategy to exceptions. If loadData() returns a boolean or an enum to signify success or the error type, the caller can interpret these outcomes without needing to handle exceptions, making the process potentially simpler and more straightforward.
+
+
+3- Using std::list<seneca::Person*> and std::vector<seneca::Person*> vs. their non-pointer counterparts:
+
+   Utilizing std::list<seneca::Person*> and std::vector<seneca::Person*> enables polymorphic behavior, which is a cornerstone of object-oriented programming. By storing pointers to Person objects in these containers, you can accommodate instances of any class derived from Person, not just Person objects themselves. This flexibility allows each object to behave according to its actual derived type, retaining its unique behaviors and properties.
+
+Polymorphism shines when you can interact with a collection of objects through a common interface (here, a pointer to the base Person class) while still preserving the distinct functionalities of each derived class. This approach is essential when you want to execute operations on a mixed collection of objects without knowing their specific derived types at compile time.
+
+However, if you were to use std::list<seneca::Person> or std::vector<seneca::Person>, you'd encounter the issue of object slicing. Object slicing occurs when a derived class object is assigned to a base class object, leading to the loss of the derived class's data and behaviors; only the base class attributes are preserved. In the context of containers, this means that when you insert derived objects into a list or vector of Person, you'd lose all the derived-specific information and functionality, thereby undermining the benefits of using inheritance and polymorphism in your design.

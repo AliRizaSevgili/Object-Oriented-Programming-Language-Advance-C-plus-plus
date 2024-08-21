@@ -1,0 +1,29 @@
+//==============================================
+// Name:           Ali Riza Sevgili
+// Student Number: 135200228
+// Email:          arsevgili@myseneca.ca
+// Section:        NCC
+// Date:           March 31,2024
+// Workshop:       Workshop-9
+// I have completed all the coding by myself and
+// copied only the code provided by the professor to submit my assignment.
+//==============================================
+
+1. How were binary files used in this workshop?
+
+In your workshop, binary documents have been used to store and retrieve the TreasureMap. The enscribe method writes the map's dimensions and content material to a binary report, while the recall approach reads these details back from the binary report.
+
+Comparatively, binary record operations are more green than text report operations, as they involve direct writing and analyzing of data without the need for conversions. For example, fout.Write(reinterpret_cast<char*>(&rows), sizeof(rows)); at once writes the dimensions of rows to the binary record, unlike text documents wherein the facts could want to be transformed to a string format earlier than writing.
+
+2. Why is it critical to bind a characteristic to its arguments, and how turned into it useful in this workshop?
+
+Binding a function to its arguments creates a new feature that may be known as later with fewer arguments on the grounds that some are pre-distinctive. In the findTreasure approach, std::bind is used to bind the digForTreasure feature with its parameters: std::bind(digForTreasure, std::placeholders::_1, mark). This is specially beneficial within the context of multithreading, where each thread can be assigned a characteristic with its arguments geared up to be carried out.
+
+3. The blessings of the use of a couple of threads and how it was done in this workshop.
+
+Multiple threads can drastically decorate the performance of a application by using permitting concurrent execution of obligations. In the findTreasure function, the venture of trying to find treasure is divided amongst multiple threads, allowing parallel processing and decreasing universal execution time. Each thread procedures a part of the map, and the outcomes are aggregated on the end.
+Four. Describe the relationship among futures and packaged_tasks and their use with threads.
+
+Std::packaged_task wraps a callable detail and lets in its end result to be retrieved asynchronously via a std::future. In the findTreasure feature, each thread is assigned a std::packaged_task that executes digForTreasure. The result of this project is accessed using a std::future, which waits for the task to finish and retrieves the final results. This dating allows the principle thread to continue executing even as the obligations are processed in parallel, with the ability to fetch the results later.
+
+Through those points, your code demonstrates practical applications of binary report operations, feature binding, multithreading, and the use of futures and packaged tasks in a real-international C++ scenario.

@@ -1,0 +1,33 @@
+//==============================================
+// Name:           Ali Riza Sevgili
+// Student Number: 135200228
+// Email:          arsevgili@myseneca.ca
+// Section:        NCC
+// Date:           March 22,2024
+// Workshop:       Workshop-8
+// I have completed all the coding by myself and
+// copied only the code provided by the professor to submit my assignment.
+//==============================================
+
+In the second part of Workshop 8, the focus shifted towards utilizing smart pointers, specifically std::unique_ptr, std::shared_ptr, and std::weak_ptr, to manage resources more efficiently and safely. This part significantly built upon the foundational knowledge from Part 1, demonstrating the power and convenience of smart pointers in modern C++ development.
+
+Key Learnings:
+- I learned to replace manual memory management with smart pointers, greatly simplifying resource management and reducing the risk of memory leaks.
+- Implementing the operator += overload and the mergeSmart() function with smart pointer syntax illustrated the ease of transferring ownership of resources without explicit delete calls.
+- I gained a deeper understanding of the semantics of move operations and how they facilitate efficient management of resources in containers.
+
+
+Difficulties: - At first, it was difficult to get used to the syntax and usage patterns of smart pointers, particularly comprehending the ownership transfer semantics.
+Thorough design and testing were necessary to guarantee that all resources are handled appropriately when exceptions are raised.
+
+Solutions: - To gain a better understanding of smart pointer usage and best practices, I thoroughly examined C++ documentation and examples.
+- To securely create smart pointers and guarantee that resources are managed automatically, I used std::make_unique and std::make_shared.
+
+Conclusion: During the second workshop session, the benefits of smart pointers over raw pointers were eloquently illustrated. It demonstrated how intelligent pointers can greatly reduce boilerplate code for memory management, increase code safety by averting memory leaks, and help express ownership semantics in the code more clearly.
+
+One benefit of smart pointer syntax is that it automates memory management, reducing the possibility of memory leaks and improving the readability and safety of code. Using std::unique_ptr in the merge, for instanceI was able to concentrate on the logic instead of the when and how of memory release thanks to the Smart() function.
+
+What Sets Apart Smart Pointer Syntax From Raw Syntax:
+The primary distinction is in who is responsible for memory management. Programmers are liable for explicitly allocating memory when working with raw pointers, which can lead to mistakes. On the other hand, smart pointers automatically manage memory, improving code robustness and reducing the likelihood of memory management errors.
+
+To sum up, this workshop helped me better understand smart pointers and how important they are to contemporary C++ programming. I feel more comfortable now writing effective, secure, and tidy C++ code.

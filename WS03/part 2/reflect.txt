@@ -1,0 +1,22 @@
+//==============================================
+// Name:           Ali Riza Sevgili
+// Student Number: 135200228
+// Email:          arsevgili@myseneca.ca
+// Section:        NCC
+// Date:           Feb 4,2024
+// Workshop:       Workshop-3
+// I have completed all the coding by myself and
+// copied only the code provided by the professor to submit my assignment.
+//==============================================
+
+With this workshop, I had an in-depth practical touch in C++ for template classes, operator overloading, dynamic memory management, and specialization. This was not an exercise in just writing code and implementing the afore-stated concepts, but also about understanding their importance and getting to apply them in real scenarios.
+
+One big thing learnt was the reason to specialize the add() member function in Set class. This specialization was necessitated so that only unique elements were being added to the set according to this base property of a set in mathematics. The comparison of floating-point numbers in terms of equality by taking tolerance was specifically painful for types like double because of the nature of floating-point arithmetic.
+
+Another important aspect was the definition of class variables outside the class definition, for example, static variables or template specializations. This approach decouples the declaration from the definition of template classes. This is essential for template classes to prevent linker errors and let the compiler generate proper code for template instances used in distinct translation units.
+
+And the possible difficulty was in dealing with dynamic memory management—made sure there are no leaks of this memory. One modern solution is using smart pointers, like std::unique_ptr and std::shared_ptr, but it is also important to possess a clear understanding of raw pointer management. It was a lesson in carefully planning object lifecycles and being mindful of destructors to properly release resources.
+
+Integrating these concepts as a coherent solution tested my understanding and my ability to apply C++ principles effectively throughout the workshop. This was a holistic exercise which reiterated the importance of careful design with templates and dynamic memory - after all, at the base of it lies the concept of building efficient and error-free code.
+
+Overall, this workshop has improved my competence in C++, and has equipped me for tougher programming tasks lying ahead.
